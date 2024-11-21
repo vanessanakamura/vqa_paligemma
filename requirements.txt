@@ -1,0 +1,9 @@
+transformers @ git+https://github.com/huggingface/transformers.git
+trl
+peft
+accelerate
+bitsandbytes
+pillow
+datasets==2.21.0
+torch
+huggingface_hub
