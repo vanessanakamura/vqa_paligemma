@@ -23,3 +23,21 @@ Parametros:
    ```bash
     pip install -r requirements.txt
    ```
+
+
+## Como Utilizar o Modelo Fine-Tuned
+Para utilizar o modelo fine-tuned para inferências de Visual Question Answering, siga o exemplo abaixo:
+
+```python
+from peft import PeftModel, PeftConfig
+from transformers import AutoModelForCausalLM
+
+# Carregar a configuração do modelo fine-tuned
+config = PeftConfig.from_pretrained("vannynakamura/paligemma_vqav2")
+
+# Carregar o modelo base
+base_model = AutoModelForCausalLM.from_pretrained("google/paligemma-3b-pt-224")
+
+# Carregar o modelo fine-tuned
+model = PeftModel.from_pretrained(base_model, "vannynakamura/paligemma_vqav2")
+```
